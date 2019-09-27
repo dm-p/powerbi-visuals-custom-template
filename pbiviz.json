@@ -1,0 +1,25 @@
+{
+    "visual": {
+        "name": "templateVisual",
+        "displayName": "Template Visual",
+        "guid": "templateVisual17D465A29E6044D190304CE97F18D518",
+        "visualClassName": "Visual",
+        "version": "1.0.0.0",
+        "description": "Template custom visual",
+        "supportUrl": "www.mycustomvisualsite.com",
+        "gitHubUrl": ""
+    },
+    "apiVersion": "2.6.0",
+    "author": {
+        "name": "Visual Author",
+        "email": "visual@author.email"
+    },
+    "assets": {
+        "icon": "assets/icon.png"
+    },
+    "externalJS": [],
+    "style": "style/visual.less",
+    "capabilities": "capabilities.json",
+    "dependencies": null,
+    "stringResources": []
+}

@@ -1,0 +1,6 @@
+{
+    "Roles_Category": "Axis",
+    "Roles_Category_Description": "Categorical or x-axis value to use for charts.",
+    "Roles_Measure": "Value",
+    "Roles_Measure_Description": "Measure or y-axis value(s) to use for charts."
+}
