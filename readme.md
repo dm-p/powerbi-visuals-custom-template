@@ -15,6 +15,7 @@ When we instantiate a custom visual using `pbiviz new`, the first thing I do is 
     * Create `stringResources/en_US/resources.resjson` with these keys, so that we can validate `en_US` localisation when we package (not currently supported in the developer visual).
 * Fill out the `pbiviz.json` with some defaults so that I can run `pbiviz package` without it erroring about missing fields.
 * Add [rendering events handling](https://microsoft.github.io/PowerBI-visuals/docs/how-to-guide/rendering-events/), so that we're doing the right thing if we want to work towards certification.
+* Add VS Code association for `.resjson` files, for better editing localisation keys.
 
 # Using the Repo
 
