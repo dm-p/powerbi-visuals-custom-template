@@ -2,7 +2,7 @@
 
 This is a template repo for a new TypeScript-based Power BI custom visual and hopefully saves a bit of time when setting up a new one from scratch.
 
-This repo is set up for **v2.6.0** of the [`powerbi-visuals-api`](https://github.com/microsoft/PowerBI-visuals-api) and assumes you're using version **3.1** of the [`powerbi-visuals-tools`](https://github.com/microsoft/PowerBI-visuals-tools) SDK.
+This repo is set up for **v2.6.1** of the [`powerbi-visuals-api`](https://github.com/microsoft/PowerBI-visuals-api) and assumes you're using version **3.1** of the [`powerbi-visuals-tools`](https://github.com/microsoft/PowerBI-visuals-tools) SDK.
 
 When we instantiate a custom visual using `pbiviz new`, the first thing I do is remove a whole bunch of stuff and set up some things I typically need each time:
 
@@ -13,7 +13,6 @@ When we instantiate a custom visual using `pbiviz new`, the first thing I do is 
 * Add [powerbi-visuals-utils-formattingutils](https://github.com/microsoft/powerbi-visuals-utils-formattingutils) package so that we can do [localisation](https://microsoft.github.io/PowerBI-visuals/docs/how-to-guide/adding-localization/).
     * Add sample localisation keys to `capabilities.json`.
     * Create `stringResources/en_US/resources.resjson` with these keys, so that we can validate `en_US` localisation when we package (not currently supported in the developer visual).
-* Fix the JSON schema configuration for `pbiviz.json`, `capabilities.json` and `dependencies.json` as these are [currently broken](https://github.com/microsoft/PowerBI-visuals-tools/issues/285).
 * Fill out the `pbiviz.json` with some defaults so that I can run `pbiviz package` without it erroring about missing fields.
 * Add [rendering events handling](https://microsoft.github.io/PowerBI-visuals/docs/how-to-guide/rendering-events/), so that we're doing the right thing if we want to work towards certification.
 
