@@ -2,7 +2,7 @@
 
 This is a template repo for a new TypeScript-based Power BI custom visual and hopefully saves a bit of time when setting up a new one from scratch.
 
-This repo is set up for **v2.6.1** of the [`powerbi-visuals-api`](https://github.com/microsoft/PowerBI-visuals-api) and assumes you're using version **3.1** of the [`powerbi-visuals-tools`](https://github.com/microsoft/PowerBI-visuals-tools) SDK.
+This repo is set up for **v2.6.1** of the [`powerbi-visuals-api`](https://github.com/microsoft/PowerBI-visuals-api) and will also install version **3.1** of the [`powerbi-visuals-tools`](https://github.com/microsoft/PowerBI-visuals-tools) SDK as a local dependency.
 
 When we instantiate a custom visual using `pbiviz new`, the first thing I do is remove a whole bunch of stuff and set up some things I typically need each time:
 
@@ -15,14 +15,13 @@ When we instantiate a custom visual using `pbiviz new`, the first thing I do is 
     * Create `stringResources/en_US/resources.resjson` with these keys, so that we can validate `en_US` localisation when we package (not currently supported in the developer visual).
 * Fill out the `pbiviz.json` with some defaults so that I can run `pbiviz package` without it erroring about missing fields.
 * Add [rendering events handling](https://microsoft.github.io/PowerBI-visuals/docs/how-to-guide/rendering-events/), so that we're doing the right thing if we want to work towards certification.
-* Add VS Code association for `.resjson` files, for better editing localisation keys.
 
 # Using the Repo
 
-Once you create a new repo from this template, you need to do the following:
+Once you create a new repo from this template (or pull down an update), you need to do the following:
 
-* Run `npm i` to ensure that all node modules are pulled down and correct.
-* If you haven't installed the SDK, then you'll need to do this with `npm i -g powerbi-visuals-tools`.
+* Run `npm i` to ensure that all dependent node modules are pulled down and up-to-date.
+* If you have the correct version of `powerbi-visuals-tools` installed globally, then the certificate will be reused, otherwise:
 * If this is the first time using the version of the SDK/API then you'll need to generate and install your certificate with `pbiviz --install-cert`.
 * Update `pbiviz.json` (see below).
 

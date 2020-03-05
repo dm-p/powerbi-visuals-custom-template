@@ -1,4 +1,4 @@
-/** Power BI API Dependencies */
+// Power BI API Dependencies
     import 'core-js/stable';
     import './../style/visual.less';
     import powerbi from 'powerbi-visuals-api';
@@ -13,22 +13,22 @@
     import IVisualEventService = powerbi.extensibility.IVisualEventService;
     import ILocalizationManager = powerbi.extensibility.ILocalizationManager;
 
-/** Internal Dependencies */
-    import { VisualSettings } from "./settings";
+// Internal Dependencies
+    import { VisualSettings } from "./VisualSettings";
 
     export class Visual implements IVisual {
-        /** The root element for the entire visual */
+        // The root element for the entire visual
             private container: HTMLElement;
-        /** Visual host services */
+        // Visual host services
             private host: IVisualHost;
-        /** Parsed visual settings */
+        // Parsed visual settings
             private settings: VisualSettings;
-        /** Handle rendering events */
+        // Handle rendering events
             private events: IVisualEventService;
-        /** Handle localisation of visual text */
+        // Handle localisation of visual text
             private localisationManager: ILocalizationManager;
 
-        /** Runs when the visual is initialised */
+        // Runs when the visual is initialised
             constructor(options: VisualConstructorOptions) {
                 console.log('Visual constructor', options);
                 this.container = options.element;
@@ -37,27 +37,27 @@
                 this.events = this.host.eventService;
             }
 
-        /** Runs when data roles added or something changes */
+        // Runs when data roles added or something changes
             public update(options: VisualUpdateOptions) {
 
-                /** Handle main update flow */
+                // Handle main update flow
                     try {
 
-                        /** Signal we've begun rendering */
+                        // Signal we've begun rendering
                             this.events.renderingStarted(options);
                             console.log('Visual update', options);
 
-                        /** Parse the settings for use in the visual */
+                        // Parse the settings for use in the visual
                             this.settings = Visual.parseSettings(options && options.dataViews && options.dataViews[0]);
 
-                        /** Signal that we've finished rendering */
+                        // Signal that we've finished rendering
                             this.events.renderingFinished(options);
                             console.log('Finished rendering');
                             return;
 
                     } catch(e) {
 
-                        /** Signal that we've encountered an error */
+                        // Signal that we've encountered an error
                             this.events.renderingFailed(options, e);
                             console.log(`Rendering failed: ${e}`);
 
@@ -66,7 +66,7 @@
             }
 
             private static parseSettings(dataView: DataView): VisualSettings {
-                return VisualSettings.parse(dataView) as VisualSettings;
+                return VisualSettings.parse(dataView);
             }
 
         /**

@@ -4,7 +4,7 @@
         "displayName": "Template Visual",
         "guid": "templateVisual17D465A29E6044D190304CE97F18D518",
         "visualClassName": "Visual",
-        "version": "1.0.0.0",
+        "version": "1.1.0.2",
         "description": "Template custom visual",
         "supportUrl": "www.mycustomvisualsite.com",
         "gitHubUrl": ""
